@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Govt. Degree College Venai Swat</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
@@ -26,31 +26,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       flex-wrap: wrap;
     }
-.logo .tagline {
-  font-size: 0.9rem;
-  color: #ffffff;
-  font-style: italic;
-  margin-top: 5px;
-  text-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5;
-  animation: blinkGlow 1.2s infinite alternate;
-}
-     
-
-@keyframes blinkGlow {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 30px #00ffe5;
-  }
-  50% {
-    opacity: 0.4;
-    text-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5;
-  }
-  100% {
-    opacity: 1;
-    text-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff, 0 0 35px #00f0ff;
-  }
-}
-
 
     .logo {
       display: flex;
@@ -63,35 +38,57 @@
       border-radius: 10px;
     }
 
-  .social-links {
-  display: flex;
-  gap: 15px;
-}
+    .logo .tagline {
+      font-size: 0.9rem;
+      color: #ffffff;
+      font-style: italic;
+      margin-top: 5px;
+      text-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5;
+      animation: blinkGlow 1.2s infinite alternate;
+    }
 
-.social-links a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
+    @keyframes blinkGlow {
+      0% {
+        opacity: 1;
+        text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 30px #00ffe5;
+      }
+      50% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff, 0 0 35px #00f0ff;
+      }
+    }
 
-.social-links a:hover {
-  transform: scale(1.2);
-}
+    .social-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-/* Brand-specific colors */
-.social-links a.facebook { color: #3b5998; }      /* Facebook blue */
-.social-links a.instagram { color: #E1306C; }     /* Instagram pink-red */
-.social-links a.youtube { color: #FF0000; }       /* YouTube red */
-.social-links a.whatsapp { color: #25D366; }      /* WhatsApp green */
-.social-links a.gmail { color: #D44638; }         /* Gmail red */
+    .social-links a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
 
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
 
-
+    .social-links a.facebook { color: #3b5998; }
+    .social-links a.instagram { color: #E1306C; }
+    .social-links a.youtube { color: #FF0000; }
+    .social-links a.whatsapp { color: #25D366; }
+    .social-links a.gmail { color: #D44638; }
 
     nav {
       background-color: transparent;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+
     nav ul {
       list-style: none;
       margin: 0;
@@ -101,9 +98,11 @@
       gap: 15px;
       flex-wrap: wrap;
     }
+
     nav ul li {
       position: relative;
     }
+
     nav ul li a {
       color: white;
       text-decoration: none;
@@ -114,13 +113,15 @@
       border: none;
       border-radius: 50px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease; 
+      transition: all 0.3s ease;
     }
+
     nav ul li a:hover {
       transform: scale(1.1);
       background: linear-gradient(145deg, #3a47d5, #00d2ff);
       box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
     }
+
     nav ul li ul {
       display: none;
       position: absolute;
@@ -131,9 +132,11 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
       z-index: 1000;
     }
+
     nav ul li:hover ul {
       display: block;
     }
+
     nav ul li ul li a {
       background: none;
       padding: 5px 3px;
@@ -149,14 +152,11 @@
       font-size: 1.2rem;
       margin: 10px 0;
     }
- 
 
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
- 
-
 
     .container {
       display: flex;
@@ -239,16 +239,48 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 15px;
       }
+
+      .logo {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo img {
+        margin-bottom: 10px;
+      }
+
       nav ul {
         flex-direction: column;
         align-items: center;
       }
+
+      nav ul li a {
+        width: 100%;
+        text-align: center;
+      }
+
       .container {
         flex-direction: column;
+        padding: 20px;
       }
+
       .sidebar {
         max-width: 100%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .blinker {
+        font-size: 1rem;
+        margin: 5px 0;
       }
     }
   </style>
@@ -257,26 +289,23 @@
 
 <header>
   <div class="logo">
-  <img src="images/ALAMVENAI.jpg" alt="ALAMVENAI" />
-  <div>
-    <h1 style="margin: 0;">Govt. Degree College Venai Swat</h1>
-    <div class="tagline">Elevation Via Education</div>
+    <img src="ALAMVENAI.jpg" alt="ALAMVENAI" />
+    <div>
+      <h1 style="margin: 0;">Govt. Degree College Venai Swat</h1>
+      <div class="tagline">Elevation Via Education</div>
+    </div>
   </div>
-</div>
 
- <div class="social-links">
-  <a href="https://www.facebook.com/YourPage" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com/YourPage" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.youtube.com/@YourChannel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://wa.me/923339484307" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-   <a href="mailto:gdcvanaiswat@gmail.com"><i class="fas fa-envelope"></i></a>
-
-</div>
-
-
+  <div class="social-links">
+    <a href="https://www.facebook.com/YourPage" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/YourPage" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@YourChannel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/923339484307" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:gdcvanaiswat@gmail.com" class="gmail"><i class="fas fa-envelope"></i></a>
+  </div>
 </header>
 
-<div class="blinker">STAY CONNECTED!</div>
+<div class="blinker"> STAY CONNECTED!</div>
 
 <nav>
   <ul>
@@ -313,20 +342,18 @@
 <div class="container">
   <aside class="sidebar">
     <div class="principal">
-      <img src="images/rrr.jpg" alt="Principal Photo" />
+      <img src="rrr.jpg" alt="Photo of Principal" />
       <h3>Principal's Message</h3>
       <p>Welcome to Govt. Degree College Venai Swat. We strive for academic excellence and personal development.</p>
     </div>
+
     <div class="gallery">
-  <h3>Gallery</h3>
-  <div class="gallery-grid">
-<img src="images/Director.jpg" alt="Director" />
-<img src="images/Principal.jpg" alt="Principal" />
-<img src="images/abbas6.jpg" alt="Office" />
-  <img src="images/sultan2.jpg" alt="MPA" />  
-    
-  </div>
-</div>
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <img src="Director.jpg" alt="Director">
+        <img src="Principal.jpg" alt="Principal">
+      </div>
+    </div>
 
     <div class="contacts">
       <h3>Contact</h3>
