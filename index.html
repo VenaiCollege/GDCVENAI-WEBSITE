@@ -275,6 +275,64 @@ p, nav, .blinker {
         font-size: 1rem;
       }
     }
+    .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    z-index: 1001;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #1a1a40;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  nav ul li ul {
+    position: static;
+    background: #333;
+  }
+
+  nav ul li:hover ul {
+    display: none;
+  }
+
+  nav ul li:focus-within ul,
+  nav ul li ul:hover {
+    display: block;
+  }
+}
+
   </style>
   <script>
   const hoverSound = new Audio('sound/hover.mp3'); // Make sure this path is correct
@@ -314,7 +372,7 @@ p, nav, .blinker {
 </header>
 
 <div class="blinker">STAY CONNECTED!</div>
-
+<div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 <nav>
   <ul>
     <li><a href="#">Home</a></li>
@@ -412,6 +470,12 @@ p, nav, .blinker {
       });
     });
   });
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector("nav ul");
+    nav.classList.toggle("show");
+  }
 </script>
 
 </body>
