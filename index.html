@@ -340,6 +340,36 @@ p, nav, .blinker {
     display: block;
   }
 }
+.clock-container {
+  margin-top: 15px;
+  text-align: left;
+  padding-left: 10px;
+  animation: fadeInClock 1.5s ease forwards;
+  color: #00ffee;
+  font-family: 'Poppins', sans-serif;
+}
+
+.clock-container div {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeSlideIn 1s ease forwards;
+}
+
+.clock-container div:nth-child(1) { animation-delay: 0.3s; }
+.clock-container div:nth-child(2) { animation-delay: 0.6s; }
+.clock-container div:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   </style>
   <script>
@@ -377,7 +407,12 @@ p, nav, .blinker {
     <a href="https://wa.me/923339484307" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="mailto:gdcvanaiswat@gmail.com" class="gmail"><i class="fab fa-envelope"></i></a>
   </div>
-  <div id="clock" style="font-size: 1.1rem; color: #00ffff; margin-top: 10px;"></div>
+  <div class="clock-container">
+  <div id="day"></div>
+  <div id="date"></div>
+  <div id="time"></div>
+</div>
+
 
 </header>
 
@@ -489,33 +524,33 @@ p, nav, .blinker {
   icon.classList.toggle("fa-bars");
   icon.classList.toggle("fa-times");
   }
-</script>
-<script>
+</script><script>
   function updateClock() {
     const now = new Date();
 
     // Convert to Pakistan Standard Time (UTC+5)
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const pstDate = new Date(utc + (5 * 60 * 60 * 1000)); // UTC+5
+    const offset = 5 * 60; // minutes
+    const pst = new Date(now.getTime() + (offset - now.getTimezoneOffset()) * 60000);
 
-    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const dayName = dayNames[pstDate.getDay()];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const day = days[pst.getDay()];
+    const date = pst.getDate().toString().padStart(2, '0');
+    const month = (pst.getMonth() + 1).toString().padStart(2, '0');
+    const year = pst.getFullYear();
 
-    const day = String(pstDate.getDate()).padStart(2, '0');
-    const month = String(pstDate.getMonth() + 1).padStart(2, '0');
-    const year = pstDate.getFullYear();
+    const hours = pst.getHours().toString().padStart(2, '0');
+    const minutes = pst.getMinutes().toString().padStart(2, '0');
+    const seconds = pst.getSeconds().toString().padStart(2, '0');
 
-    const hours = String(pstDate.getHours()).padStart(2, '0');
-    const minutes = String(pstDate.getMinutes()).padStart(2, '0');
-    const seconds = String(pstDate.getSeconds()).padStart(2, '0');
-
-    const clockString = `${dayName}, ${day}/${month}/${year} — ${hours}:${minutes}:${seconds}`;
-    document.getElementById('clock').textContent = clockString;
+    document.getElementById("day").textContent = day;
+    document.getElementById("date").textContent = `${date}/${month}/${year}`;
+    document.getElementById("time").textContent = `${hours}:${minutes}:${seconds}`;
   }
 
   setInterval(updateClock, 1000);
   updateClock();
 </script>
+
 
 </body>
 </html>
