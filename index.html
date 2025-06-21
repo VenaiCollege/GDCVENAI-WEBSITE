@@ -87,6 +87,14 @@
   background-color: #333; /* ensure background doesn't go transparent */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
+#clock {
+  font-family: 'Poppins', sans-serif;
+  background: rgba(0, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,255,255,0.3);
+}
 
     nav ul {
       list-style: none;
@@ -369,6 +377,8 @@ p, nav, .blinker {
     <a href="https://wa.me/923339484307" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="mailto:gdcvanaiswat@gmail.com" class="gmail"><i class="fab fa-envelope"></i></a>
   </div>
+  <div id="clock" style="font-size: 1.1rem; color: #00ffff; margin-top: 10px;"></div>
+
 </header>
 
 <div class="blinker">STAY CONNECTED!</div>
@@ -479,6 +489,32 @@ p, nav, .blinker {
   icon.classList.toggle("fa-bars");
   icon.classList.toggle("fa-times");
   }
+</script>
+<script>
+  function updateClock() {
+    const now = new Date();
+
+    // Convert to Pakistan Standard Time (UTC+5)
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const pstDate = new Date(utc + (5 * 60 * 60 * 1000)); // UTC+5
+
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayName = dayNames[pstDate.getDay()];
+
+    const day = String(pstDate.getDate()).padStart(2, '0');
+    const month = String(pstDate.getMonth() + 1).padStart(2, '0');
+    const year = pstDate.getFullYear();
+
+    const hours = String(pstDate.getHours()).padStart(2, '0');
+    const minutes = String(pstDate.getMinutes()).padStart(2, '0');
+    const seconds = String(pstDate.getSeconds()).padStart(2, '0');
+
+    const clockString = `${dayName}, ${day}/${month}/${year} — ${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').textContent = clockString;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
 </script>
 
 </body>
