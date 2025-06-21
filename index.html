@@ -258,13 +258,22 @@
     }
   </style>
   <script>
-    const hoverSound = new Audio('sound/hover.mp3');
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('nav a').forEach(el => {
-        el.addEventListener('mouseenter', () => hoverSound.play());
+  const hoverSound = new Audio('sound/hover.mp3'); // Make sure this path is correct
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select both nav links and social media links
+    const hoverTargets = document.querySelectorAll('nav a, .social-links a');
+
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        // Restart sound if it was already playing
+        hoverSound.currentTime = 0;
+        hoverSound.play();
       });
     });
-  </script>
+  });
+</script>
+
 </head>
 <body>
 <header>
@@ -368,11 +377,16 @@
   &copy; 2025 Govt. Degree College Venai Swat. All Rights Reserved.
 </div>
   <script>
-  const hoverSound = new Audio('sound/hover.mp3');
+  const hoverSound = new Audio('sound/hover.mp3'); // Make sure this path is correct
+
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('nav a').forEach(el => {
+    // Select both nav links and social media links
+    const hoverTargets = document.querySelectorAll('nav a, .social-links a');
+
+    hoverTargets.forEach(el => {
       el.addEventListener('mouseenter', () => {
-        hoverSound.currentTime = 0; // Restart sound if hovered repeatedly
+        // Restart sound if it was already playing
+        hoverSound.currentTime = 0;
         hoverSound.play();
       });
     });
