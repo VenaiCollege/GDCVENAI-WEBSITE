@@ -381,6 +381,28 @@ p, nav, .blinker {
     transform: translateY(0);
   }
 }
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  background: #00d2ff;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+#backToTop:hover {
+  background: #3a47d5;
+  transform: scale(1.1);
+}
 
   </style>
   <script>
@@ -561,6 +583,18 @@ p, nav, .blinker {
   setInterval(updateClock, 1000);
   updateClock();
 </script>
+<script>
+  const topBtn = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    topBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+  };
+
+  topBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+<button id="backToTop" title="Back to Top">⬆️</button>
 
 
 
