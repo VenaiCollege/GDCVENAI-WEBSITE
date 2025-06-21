@@ -530,7 +530,8 @@ p, nav, .blinker {
   icon.classList.toggle("fa-bars");
   icon.classList.toggle("fa-times");
   }
-</script><script>
+</script>
+ <script>
   function updateClock() {
     const nowUTC = new Date();
 
@@ -545,18 +546,21 @@ p, nav, .blinker {
     const month = (pstTime.getMonth() + 1).toString().padStart(2, '0');
     const year = pstTime.getFullYear();
 
-    const hours = pstTime.getHours().toString().padStart(2, '0');
+    let hours = pstTime.getHours();
     const minutes = pstTime.getMinutes().toString().padStart(2, '0');
     const seconds = pstTime.getSeconds().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12; // Convert to 12-hour format
 
     document.getElementById("day").textContent = `🗓️ ${day}`;
     document.getElementById("date").textContent = `📅 ${date}/${month}/${year}`;
-    document.getElementById("time").textContent = `⏰ ${hours}:${minutes}:${seconds}`;
+    document.getElementById("time").textContent = `⏰ ${hours}:${minutes}:${seconds} ${ampm}`;
   }
 
   setInterval(updateClock, 1000);
   updateClock();
 </script>
+
 
 
 
