@@ -473,8 +473,11 @@ p, nav, .blinker {
 </script>
 <script>
   function toggleMenu() {
-    const nav = document.querySelector("nav ul");
-    nav.classList.toggle("show");
+  const nav = document.querySelector("nav ul");
+  const icon = document.querySelector(".hamburger i");
+  nav.classList.toggle("show");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-times");
   }
 </script>
 
