@@ -1,0 +1,363 @@
+
+<html><meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"><body>
+          <table class="table table-striped table2excel" border="1">
+						<thead>
+						  <tr>
+                <th>Roll_Number</th>
+                <th>name</th>
+                <th>cnic</th>
+                <th>fathername</th>
+                <th>dob</th>
+                <th>gender</th>
+                <th>mobilenumber</th>
+                <th>fathermobilenumber</th>
+                <th>address</th>
+              </tr>
+						</thead>
+						<tbody>
+                                              <tr>
+                    <td>301</td>
+                    <td>Aftabur Rahman </td>
+                    <td>15601-0335460-3</td>
+                    <td>Ismail</td>
+                    <td>2008-06-10</td>
+                    <td>Male</td>
+                    <td>342-9257547</td>
+                    <td>344-2543399</td>
+                    <td>cham chuprial tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>303</td>
+                    <td>Muhammad Younas</td>
+                    <td>15601-9884253-5</td>
+                    <td>Taj Muhammad</td>
+                    <td>2008-04-10</td>
+                    <td>Male</td>
+                    <td>344-0729911</td>
+                    <td>344-2780733</td>
+                    <td>Telai Tangar Labat Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>304</td>
+                    <td>Muheen Uddin</td>
+                    <td>15601-1355966-7</td>
+                    <td>Sherin Zada</td>
+                    <td>2007-01-10</td>
+                    <td>Male</td>
+                    <td>347-9464868</td>
+                    <td>345-0566545</td>
+                    <td>Village: peochar,p/o:Gat</td>
+                  </tr>
+                                  <tr>
+                    <td>305</td>
+                    <td>Saeed Shah</td>
+                    <td>15601-7930920-5</td>
+                    <td>Ajab Khan</td>
+                    <td>2007-02-10</td>
+                    <td>Male</td>
+                    <td>349-2522996</td>
+                    <td>342-2527848</td>
+                    <td>Kandowgai Chuprial Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>306</td>
+                    <td>Arshad Iqbal</td>
+                    <td>15601-0203645-5</td>
+                    <td>Muhammad Ayub Khan</td>
+                    <td>2008-03-21</td>
+                    <td>Male</td>
+                    <td>349-1962367</td>
+                    <td>343-8999630</td>
+                    <td>kandawgai chuprail Tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>307</td>
+                    <td>Sabz Ali</td>
+                    <td>15601-4744195-5</td>
+                    <td>Muqam</td>
+                    <td>2004-01-01</td>
+                    <td>Male</td>
+                    <td>345-4927290</td>
+                    <td>349-5293893</td>
+                    <td>Village Lai Banda P.O Labat Teh: Matta District Swat
+</td>
+                  </tr>
+                                  <tr>
+                    <td>308</td>
+                    <td>Zubair Shah</td>
+                    <td>15601-6392224-5</td>
+                    <td>Shah Dawran</td>
+                    <td>2005-04-03</td>
+                    <td>Male</td>
+                    <td>345-0940485</td>
+                    <td>349-1552701</td>
+                    <td>katilai chuprial tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>309</td>
+                    <td>Fazal Hadi</td>
+                    <td>15601-6927299-3</td>
+                    <td>Gawhar Ali</td>
+                    <td>2007-03-05</td>
+                    <td>Male</td>
+                    <td>343-2683086</td>
+                    <td>342-8683086</td>
+                    <td>Mohalla zurai palaw chuprial tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>310</td>
+                    <td>Saeed Ahmad</td>
+                    <td>15607-0580781-3</td>
+                    <td>Sami Ullah</td>
+                    <td>2007-04-20</td>
+                    <td>Male</td>
+                    <td>345-9745450</td>
+                    <td>344-2834401</td>
+                    <td>village &amp; P/O labat matta swat
+</td>
+                  </tr>
+                                  <tr>
+                    <td>311</td>
+                    <td>Zain Ul Ibrar</td>
+                    <td>15601-4819065-1</td>
+                    <td>Aftab Hussain</td>
+                    <td>2008-05-10</td>
+                    <td>Male</td>
+                    <td>347-5436548</td>
+                    <td>342-0485009</td>
+                    <td>Aligram, PO Koz Shawar, Tehsil Matta, District Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>312</td>
+                    <td>Kashif Khan</td>
+                    <td>15601-8630587-1</td>
+                    <td>Azeem Khan</td>
+                    <td>2009-03-05</td>
+                    <td>Male</td>
+                    <td>343-5430987</td>
+                    <td>341-8780011</td>
+                    <td>Village Shukhdara Post Office and Tehsil Matta District&nbsp;Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>313</td>
+                    <td>Ihsan Ullah</td>
+                    <td>15601-6748361-1</td>
+                    <td>Akbar Ali</td>
+                    <td>2008-02-17</td>
+                    <td>Male</td>
+                    <td>344-9562196</td>
+                    <td>344-9562196</td>
+                    <td>Village Shukhdara P/O &amp; Tehsil Matta District Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>314</td>
+                    <td>Sayed Umar Shah</td>
+                    <td>15601-1409144-9</td>
+                    <td>Lal Bacha</td>
+                    <td>2004-04-10</td>
+                    <td>Male</td>
+                    <td>349-9148527</td>
+                    <td>344-9726284</td>
+                    <td>Katilai Chuprial Tehsil Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>315</td>
+                    <td>Inayatullah</td>
+                    <td>15601-5600855-9</td>
+                    <td>Javed Khan</td>
+                    <td>2007-02-12</td>
+                    <td>Male</td>
+                    <td>348-0969151</td>
+                    <td>348-7077980</td>
+                    <td>Karakal P/O Chuprial Tehsil Matta District Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>316</td>
+                    <td>Muhammad Uzair</td>
+                    <td>15601-5309983-9</td>
+                    <td>Muhammad Rasool Khan</td>
+                    <td>2007-04-04</td>
+                    <td>Male</td>
+                    <td>340-9080862</td>
+                    <td>340-8312813</td>
+                    <td>village gwalerai matta swat</td>
+                  </tr>
+                                  <tr>
+                    <td>317</td>
+                    <td>Zahid Ullah</td>
+                    <td>15601-3550556-3</td>
+                    <td>Raza Khan</td>
+                    <td>2005-04-01</td>
+                    <td>Male</td>
+                    <td>342-7939074</td>
+                    <td>342-7939074</td>
+                    <td>Bar tali bartana Tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>318</td>
+                    <td>Muhammad Hayat</td>
+                    <td>15601-2863552-9</td>
+                    <td>Umar Hayat</td>
+                    <td>2009-03-30</td>
+                    <td>Male</td>
+                    <td>344-8006022</td>
+                    <td>340-0765257</td>
+                    <td>RORINGAR MATTA SWAT</td>
+                  </tr>
+                                  <tr>
+                    <td>320</td>
+                    <td>Farman Ullah </td>
+                    <td>15601-9646194-3</td>
+                    <td>Abdullah </td>
+                    <td>2007-06-01</td>
+                    <td>Male</td>
+                    <td>347-7702056</td>
+                    <td>348-9187236</td>
+                    <td>Village Balsoor P/O Chuprial Matta Swat </td>
+                  </tr>
+                                  <tr>
+                    <td>321</td>
+                    <td>Hayat Ullah</td>
+                    <td>15601-6863610-1</td>
+                    <td>Habib Ullah</td>
+                    <td>2008-03-01</td>
+                    <td>Male</td>
+                    <td>340-9185153</td>
+                    <td>347-2666184</td>
+                    <td>village karakal matta swat</td>
+                  </tr>
+                                  <tr>
+                    <td>322</td>
+                    <td>Aman Ullah</td>
+                    <td>15601-9341203-7</td>
+                    <td>Shahab Uddin </td>
+                    <td>2008-01-01</td>
+                    <td>Male</td>
+                    <td>349-0962822</td>
+                    <td>341-9222040</td>
+                    <td>Dandarai Village  and Post Office chuprial Tehsil Matta District Swat </td>
+                  </tr>
+                                  <tr>
+                    <td>323</td>
+                    <td>Abdul Salam</td>
+                    <td>15601-7387545-1</td>
+                    <td>Jandad</td>
+                    <td>2008-04-15</td>
+                    <td>Male</td>
+                    <td>347-9976498</td>
+                    <td>344-5161867</td>
+                    <td>Awarai labat matt swat</td>
+                  </tr>
+                                  <tr>
+                    <td>324</td>
+                    <td>Inayatullah</td>
+                    <td>15601-1761571-1</td>
+                    <td>Toti</td>
+                    <td>2007-04-01</td>
+                    <td>Male</td>
+                    <td>349-0170162</td>
+                    <td>342-9648470</td>
+                    <td>Syed Abad Chuprial Tehsil Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>325</td>
+                    <td>Ibrar Ali</td>
+                    <td>15601-1666837-7</td>
+                    <td>Khalil Ur Rahman</td>
+                    <td>2005-04-25</td>
+                    <td>Male</td>
+                    <td>347-0340117</td>
+                    <td>347-5011203</td>
+                    <td>village Bakoor PO Barthana Tehsil Matta Distt swat</td>
+                  </tr>
+                                  <tr>
+                    <td>326</td>
+                    <td>Junaid Khan</td>
+                    <td>15601-7067425-1</td>
+                    <td>Shazol</td>
+                    <td>2008-04-02</td>
+                    <td>Male</td>
+                    <td>343-5012423</td>
+                    <td>349-9093742</td>
+                    <td>Daghai PO Chuprial Tehsil Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>327</td>
+                    <td>Abubakar</td>
+                    <td>15601-5889194-7</td>
+                    <td>Gul Muhammad</td>
+                    <td>2006-08-01</td>
+                    <td>Male</td>
+                    <td>347-9622394</td>
+                    <td>347-9622394</td>
+                    <td>kandawgi chuprial tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>328</td>
+                    <td>Abbas Khan</td>
+                    <td>15601-7974976-3</td>
+                    <td>Muhammad Saleem</td>
+                    <td>2008-04-12</td>
+                    <td>Male</td>
+                    <td>346-1580873</td>
+                    <td>346-1580873</td>
+                    <td>Village Paraw P.O Barthana Teh: Matta District Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>329</td>
+                    <td>Yaseen Malik Khan </td>
+                    <td>15601-3207064-9</td>
+                    <td>Muhammad Hanifa</td>
+                    <td>2008-03-31</td>
+                    <td>Male</td>
+                    <td>346-2520207</td>
+                    <td>346-2520207</td>
+                    <td>Muhala Naik Abad Post Office Matta,Shukhdarta Tehsil Matta District Swat </td>
+                  </tr>
+                                  <tr>
+                    <td>330</td>
+                    <td>Usman</td>
+                    <td>15601-8697904-3</td>
+                    <td>Mian Aqal Zada</td>
+                    <td>2007-03-01</td>
+                    <td>Male</td>
+                    <td>346-7779470</td>
+                    <td>344-9621260</td>
+                    <td>Mohala Cham Chuprial Tehsil Matta Swat</td>
+                  </tr>
+                                  <tr>
+                    <td>332</td>
+                    <td>Wajid Ali</td>
+                    <td>15601-3200754-7</td>
+                    <td>Zahir Khan</td>
+                    <td>2008-05-03</td>
+                    <td>Male</td>
+                    <td>346-6976072</td>
+                    <td>345-6318300</td>
+                    <td>PO chuprial khandaro tehsil matta district swat</td>
+                  </tr>
+                                  <tr>
+                    <td>333</td>
+                    <td>Habib Ullah Khan</td>
+                    <td>15601-0917783-7</td>
+                    <td>Sambali Khan</td>
+                    <td>2007-03-03</td>
+                    <td>Male</td>
+                    <td>347-2666979</td>
+                    <td>341-9516281</td>
+                    <td>Koz shawar saland matta swat</td>
+                  </tr>
+                                  <tr>
+                    <td>335</td>
+                    <td>Haseeb Ullah</td>
+                    <td>15601-1062135-7</td>
+                    <td>Gul Wahid</td>
+                    <td>2009-01-05</td>
+                    <td>Male</td>
+                    <td>347-9567480</td>
+                    <td>346-2427274</td>
+                    <td>Nalkot Matta Swat.</td>
+                  </tr>
+                						</tbody>
+				  </table>
+        </body></html>
