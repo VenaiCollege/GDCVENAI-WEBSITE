@@ -614,6 +614,13 @@ p, nav, .blinker {
 
   fetchWeather();
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('nav a[href="#"]').forEach(link => {
+      link.addEventListener('click', e => e.preventDefault());
+    });
+  });
+</script>
 
 
 </body>
