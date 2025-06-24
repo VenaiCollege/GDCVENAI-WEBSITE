@@ -35,8 +35,24 @@
       background: transparent;
       color: var(--accent-color);
       padding: 20px;
-      flex-wrap: wrap;border-bottom: 2px solid white;
+      flex-wrap: wrap;
+      border-bottom: 2px solid white;
+      position: relative;
+      z-index: 1;
     }
+    header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(270deg, #00ffff, #3f2b96, #a8c0ff, #00ffff);
+  background-size: 600% 600%;
+  animation: animatedBorder 6s ease infinite;
+  border-radius: 2px;
+  z-index: -1;
+}
 
     .logo {
       display: flex;
@@ -435,6 +451,18 @@ p, nav, .blinker {
 
 .search-box button:hover {
   background: #00e0ff;
+}
+
+    @keyframes animatedBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
   </style>
   <script>
