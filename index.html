@@ -113,6 +113,8 @@ nav {
   z-index: 999; /* stays above other elements */
   background-color: #333; /* ensure background doesn't go transparent */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  border-top: 0.05px solid var(--accent-color);
+  border-bottom: 0.05px solid var(--accent-color);
 }
     nav ul {
       list-style: none;
@@ -187,7 +189,7 @@ nav {
 
 
     .blinker {
-      color: #808000;
+      color: var(--accent-color);
       font-weight: bold;
       text-align: center;
       animation: blink 1s infinite;
