@@ -662,25 +662,29 @@ p, nav, .blinker {
 
  <script>
   async function fetchWeather() {
-    const apiKey = '4dc1511366fa77909377cdcb1fceed91'; // replace this
-    const city = 'Matta'; // or 'Swat', etc.
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  const apiKey = '4dc1511366fa77909377cdcb1fceed91'; // your valid API key
+  const city = 'Matta'; // or Swat, etc.
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      const iconCode = data.weather[0].icon;
-      const temp = Math.round(data.main.temp);
-      const desc = data.weather[0].main;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-      document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${desc}">`;
-      document.getElementById('weather-temp').textContent = `${temp}°C`;
-      document.getElementById('weather-desc').textContent = desc;
-    } catch (err) {
-      console.error("Weather API error:", err);
-      document.getElementById('weather-box').textContent = "Weather Unavailable";
-    }
+    const iconCode = data.weather[0].icon;
+    const temp = Math.round(data.main.temp);
+    const desc = data.weather[0].description; // Use full description, not just 'main'
+
+    document.getElementById('weather-icon').innerHTML =
+      `<img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${desc}" style="height:18px;width:18px;">`;
+
+    document.getElementById('weather-temp').textContent = `${temp}°C`;
+    document.getElementById('weather-desc').textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+  } catch (err) {
+    console.error("Weather API error:", err);
+    document.getElementById('weather-box').textContent = "Weather Unavailable";
   }
+}
+
 
   fetchWeather();
 </script>
