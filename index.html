@@ -127,6 +127,9 @@ nav {
       flex-wrap: wrap;
       gap: 10px;
     }
+nav ul li {
+  white-space: nowrap;
+}
 
     nav > ul > li {
       position: relative;
@@ -158,16 +161,15 @@ nav {
     }
 
     nav ul li ul {
-      display: none;
+      display: none;list-style: none;
       position: absolute;
-      top: 0%;
+      top: 100%;pading: 10px 0;margin: 0;
       left: 10%;
       background: #222;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      z-index: 1000;
-      min-width: 160px;
-      white-space: nowrap;
+      z-index: 9999;
+  
     }
 
     nav ul li:hover > ul {
