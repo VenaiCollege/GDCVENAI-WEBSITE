@@ -317,53 +317,56 @@ p, nav, .blinker {
 /* Mobile styles */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
-    position: absolute;
-    right: 30px;
-    top: 25px;
-    z-index: 1001;
-  }
+        display: block;
+        font-size: 1.8rem;
+        color: red;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+      }
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #1a1a40;
-    width: 100%;
-    padding: 10px 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-  }
+  nav {
+        position: relative;
+        z-index: 1000;
+      }
 
-  nav ul.show {
-    display: flex;
-  }
+      nav ul {
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        background: #1a1a40;
+        display: none;
+        padding: 10px 0;
+      }
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
+      nav ul.show {
+        display: flex;
+      }
 
-  nav ul li a {
-    margin: 10px 0;
-    padding: 10px;
-  }
+      nav ul li {
+        width: 100%;
+        text-align: center;
+        position: relative;
+      }
 
-  nav ul li ul {
-    position: static;
-    background: #333;
-  }
+      nav ul li a {
+        display: block;
+        padding: 10px;
+      }
 
-  nav ul li:hover ul {
-    display: none;
-  }
+      nav ul li ul,
+      nav ul li ul li ul {
+        display: none;
+        background: #333;
+        position: relative;
+      }
 
-  nav ul li:focus-within ul,
-  nav ul li ul:hover {
-    display: block;
-  }
-}
+      nav ul li.open > ul {
+        display: block;
+      }
+
 .clock-container {
   display: inline-block;margin-top: 5px;
   min-width: 200px;color: var(--accent-color); 
@@ -504,6 +507,27 @@ p, nav, .blinker {
 
 </head>
 <body>
+  <script>
+  function toggleMenu() {
+    const nav = document.querySelector("nav ul");
+    const icon = document.querySelector(".hamburger i");
+    nav.classList.toggle("show");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("nav li > a").forEach(link => {
+      link.addEventListener("click", function(e) {
+        const parent = this.parentElement;
+        if (parent.querySelector("ul")) {
+          e.preventDefault();
+          parent.classList.toggle("open");
+        }
+      });
+    });
+  });
+</script>
 <header>
   <div class="logo">
     <img src="images/ALAMVENAI.jpg" alt="ALAMVENAI" />
