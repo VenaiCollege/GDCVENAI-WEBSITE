@@ -353,9 +353,10 @@ p, nav, .blinker {
     background: #333;
   }
 
-  nav ul li:hover ul {
-    display: none;
-  }
+  nav ul li:hover > ul {
+  display: none !important;
+}
+
 
   nav ul li:focus-within ul,
   nav ul li ul:hover {
@@ -481,6 +482,13 @@ p, nav, .blinker {
   font-weight: bold;
 }
 
+nav ul li ul {
+  display: none;
+}
+
+nav ul li ul.open {
+  display: block;
+}
 
   </style>
   <script>
@@ -753,6 +761,30 @@ p, nav, .blinker {
     });
   });
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("nav li > a");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const parent = this.parentElement;
+        const submenu = parent.querySelector("ul");
+
+        // If the link has a submenu
+        if (submenu) {
+          e.preventDefault(); // Prevent navigation
+          submenu.classList.toggle("open");
+
+          // Close other open menus
+          document.querySelectorAll("nav ul li ul").forEach(ul => {
+            if (ul !== submenu) ul.classList.remove("open");
+          });
+        }
+      });
+    });
+  });
+</script>
+
 
 <script>
   const students = [
