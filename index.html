@@ -756,13 +756,6 @@ nav ul li ul.open {
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('nav a[href="#"]').forEach(link => {
-      link.addEventListener('click', e => e.preventDefault());
-    });
-  });
-</script>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("nav li > a");
 
     links.forEach(link => {
@@ -784,6 +777,7 @@ nav ul li ul.open {
     });
   });
 </script>
+
 
 
 <script>
