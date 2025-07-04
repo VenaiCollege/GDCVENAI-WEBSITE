@@ -470,6 +470,20 @@ p, nav, .blinker {
     background-position: 0% 50%;
   }
 }
+    @media (max-width: 768px) {
+  .header-info {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: bold;
+  }}
 .header-info {
   position: absolute;
   top: 10px;
@@ -490,7 +504,50 @@ nav ul li ul {
 nav ul li ul.open {
   display: block;
 }
-
+/* Add these new styles at the end of your existing styles */
+    @media (max-width: 768px) {
+      /* Make header text smaller on mobile */
+      .logo h1 {
+        font-size: 1rem;
+        line-height: 3.5; 
+        margin-bottom: 0;
+      }
+      
+      /* Mobile dropdown improvements */
+      nav ul {
+        flex-direction: column;
+      }
+      
+      nav ul li {
+        width: 100%;
+        position: relative;
+      }
+      
+      nav ul li > ul {
+        display: none;
+        position: static;
+        width: 100%;
+        padding-left: 15px;
+        background: rgba(0,0,0,0.1);
+        box-shadow: none;
+        border-radius: 0;
+      }
+      
+      nav ul li > ul.open {
+        display: block;
+      }
+      
+      /* Dropdown indicator */
+      nav ul li.has-dropdown > a::after {
+        content: " \25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      }
+      
+      nav ul li.has-dropdown.open > a::after {
+        content: " \25B2";
+      }
+    }
   </style>
   <script>
   const hoverSound = new Audio('sound/hover.mp3'); // Make sure this path is correct
