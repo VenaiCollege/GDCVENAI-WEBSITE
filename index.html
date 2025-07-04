@@ -729,37 +729,46 @@ nav ul li ul.open {
   <p><i class="fas fa-copyright"></i>
   2025 Govt. Degree College Venai Swat. All Rights Reserved.</p>
 </div>
-  <script>
-  const hoverSound = new Audio('sound/hover.mp3'); // Make sure this path is correct
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // Select both nav links and social media links
-    const hoverTargets = document.querySelectorAll('nav a, .social-links a');
-
-    hoverTargets.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        // Restart sound if it was already playing
-        hoverSound.currentTime = 0;
-        hoverSound.play();
-      });
-    });
-  });
-</script>
-<script>
-  function toggleMenu() {
-  const nav = document.querySelector("nav ul");
-  const icon = document.querySelector(".hamburger i");
-  nav.classList.toggle("show");
-  icon.classList.toggle("fa-bars");
-  icon.classList.toggle("fa-times");
-  }
-</script>
  <script>
+// Toggle mobile menu
+  function toggleMenu() {
+    const nav = document.querySelector("nav ul");
+    const icon = document.querySelector(".hamburger i");
+    nav.classList.toggle("show");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  }
+
+  // Toggle dropdown menus (for mobile)
+  function toggleDropdown(event) {
+    if (window.innerWidth <= 768) {
+      event.preventDefault();
+      const parent = event.currentTarget.parentElement;
+      const dropdown = parent.querySelector("ul");
+      
+      // Close all other dropdowns first
+      document.querySelectorAll("nav ul li ul").forEach(menu => {
+        if (menu !== dropdown) {
+          menu.classList.remove("open");
+        }
+      });
+      
+      // Toggle current dropdown and all its child dropdowns
+      if (dropdown) {
+        dropdown.classList.toggle("open");
+        
+        // Also open all child dropdowns
+        const childDropdowns = dropdown.querySelectorAll("ul");
+        childDropdowns.forEach(child => {
+          child.classList.add("open");
+        });
+      }
+    }
+  }
+  // Clock functionality
   function updateClock() {
     const nowUTC = new Date();
-
-    // Pakistan Standard Time (UTC+5)
-    const utcOffsetMinutes = nowUTC.getTimezoneOffset(); // in minutes
+    const utcOffsetMinutes = nowUTC.getTimezoneOffset();
     const pstOffset = 5 * 60;
     const pstTime = new Date(nowUTC.getTime() + (pstOffset + utcOffsetMinutes) * 60000);
 
@@ -773,7 +782,7 @@ nav ul li ul.open {
     const minutes = pstTime.getMinutes().toString().padStart(2, '0');
     const seconds = pstTime.getSeconds().toString().padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12; // Convert to 12-hour format
+    hours = hours % 12 || 12;
 
     document.getElementById("day").textContent = `🗓️ ${day}`;
     document.getElementById("date").textContent = `📅 ${date}/${month}/${year}`;
@@ -782,63 +791,35 @@ nav ul li ul.open {
 
   setInterval(updateClock, 1000);
   updateClock();
-</script> 
 
- <script>
+  // Weather functionality
   async function fetchWeather() {
-  const apiKey = '4dc1511366fa77909377cdcb1fceed91'; // your valid API key
-  const city = 'Matta'; // or Swat, etc.
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    const apiKey = '4dc1511366fa77909377cdcb1fceed91';
+    const city = 'Matta';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
 
-    const iconCode = data.weather[0].icon;
-    const temp = Math.round(data.main.temp);
-    const desc = data.weather[0].description; // Use full description, not just 'main'
+      const iconCode = data.weather[0].icon;
+      const temp = Math.round(data.main.temp);
+      const desc = data.weather[0].description;
 
-    document.getElementById('weather-icon').innerHTML =
-      `<img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${desc}" style="height:18px;width:18px;">`;
+      document.getElementById('weather-icon').innerHTML =
+        `<img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${desc}" style="height:18px;width:18px;">`;
 
-    document.getElementById('weather-temp').textContent = `${temp}°C`;
-    document.getElementById('weather-desc').textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
-  } catch (err) {
-    console.error("Weather API error:", err);
-    document.getElementById('weather-box').textContent = "Weather Unavailable";
+      document.getElementById('weather-temp').textContent = `${temp}°C`;
+      document.getElementById('weather-desc').textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+    } catch (err) {
+      console.error("Weather API error:", err);
+      document.getElementById('weather-box').textContent = "Weather Unavailable";
+    }
   }
-}
-
 
   fetchWeather();
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("nav li > a");
 
-    links.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const parent = this.parentElement;
-        const submenu = parent.querySelector("ul");
-
-        // If the link has a submenu
-        if (submenu) {
-          e.preventDefault(); // Prevent navigation
-          submenu.classList.toggle("open");
-
-          // Close other open menus
-          document.querySelectorAll("nav ul li ul").forEach(ul => {
-            if (ul !== submenu) ul.classList.remove("open");
-          });
-        }
-      });
-    });
-  });
-</script>
-
-
-
-<script>
+  // Search functionality
   const students = [
     { name: "Ali Khan", cnic: "12345-6789012-3", roll: "1001" },
     { name: "Sara Ahmad", cnic: "98765-4321098-7", roll: "1002" },
@@ -865,9 +846,24 @@ nav ul li ul.open {
       ? `<div><strong>${match.name}</strong><br>CNIC: ${match.cnic}<br>Roll No: ${match.roll}</div>`
       : '<p>No student found.</p>';
   }
-</script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  // Hover sound effect
+  document.addEventListener('DOMContentLoaded', () => {
+    const hoverSound = new Audio('sound/hover.mp3');
+    const hoverTargets = document.querySelectorAll('nav a, .social-links a');
+
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        hoverSound.currentTime = 0;
+        hoverSound.play().catch(e => console.log("Audio play failed:", e));
+      });
+    });
+  });
+
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
