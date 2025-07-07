@@ -289,33 +289,57 @@ p, nav, .blinker {
   cursor: pointer;z-index: 1001;
 }
     @media (max-width: 768px) {
-    .search-wrapper,
-  .search-box,
-  .search-box input,
+    .search-box input,
   .search-box button {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-
   .search-wrapper {
-    margin: 10px auto;
-    padding: 0 10px; /* Add side padding */
-  }
-
+  width: 100%;
+  max-width: 500px; /* Prevents it from getting too wide */
+  margin: 10px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.search-box {
+  width: 100%;
+  display: flex;
+  border: 1.7px solid white;
+  border-radius: 25px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.1);
+}
+  .search-box button {
+  background: var(--accent-color);
+  border: none;
+  color: #111;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+      .search-box input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+}
   .social-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    gap: 10px;
+    gap: 16px;
     max-width: 100%;
     box-sizing: border-box;
   }
 
   .social-links a {
-    font-size: 1.2rem;
-  }
+  font-size: 1.4rem; /* restore original icon size */
+}
 
   .sub-section {
     max-width: 100%;
