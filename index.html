@@ -284,41 +284,78 @@ p, nav, .blinker {
     }
 
     @media (max-width: 768px) {
-      header, .logo {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  header, .logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .logo img {
-        margin-bottom: 10px;
-      }
+  .logo img {
+    margin-bottom: 10px;
+  }
 
-      h1{
-        font-size: 28px;
-      }
+  h1 {
+    font-size: 28px;
+  }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 10px;
+    z-index: 1001;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
 
-      nav ul li ul {
-        position: static;
-        background-color: #333 !important;
-      }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #1a1a40;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
 
-      nav ul li ul li ul {
-        position: static;
-        background-color: #333 !important;
-      }
- .container {
-        padding: 15px;
-        flex-direction: column;
-      }
-.blinker {
-        font-size: 1rem;
-      }
-    }
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    margin: 2px 0;
+    padding: 5px 8px;
+    font-size: 0.85rem;
+  }
+
+  nav ul li ul {
+    display: none;
+    position: static;
+    background: #333;
+    z-index: 1000;
+  }
+
+  nav ul li.open > ul {
+    display: block;
+  }
+
+  .container {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .blinker {
+    font-size: 1rem;
+  }
+}
       
     .hamburger {
   display: none;
@@ -327,56 +364,7 @@ p, nav, .blinker {
   cursor: pointer;z-index: 1001;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    position: absolute;top: 90%
-   
-    
-  }
-   nav ul {
-    display: none;
-    flex-direction: column;
-    background: #1a1a40;
-    width: 100%;
-    padding: 10px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-
-  nav ul.show {
-    display: flex;
-    
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-    
-  }
-
-  nav ul li a {
-  margin: 2px 0;
-  padding: 5px 8px;
-  font-size: 0.85rem; /* Slightly smaller text */
-}
-
-  nav ul li ul {
-    position: static;
-    background: #333;z-index: 1000;
-  }
-
-  nav ul li:hover > ul {
-  display: none !important;
-}
- nav ul li:focus-within ul,
-  nav ul li ul:hover {
-    display: block;
-  }
-}
+ 
 .clock-container {
   display: inline-block;margin-top: 5px;
   min-width: 200px;color: var(--accent-color); 
@@ -638,39 +626,35 @@ p, nav, .blinker {
 </script>
 <script>
   // Toggle main mobile menu
+ <script>
+  // Toggle hamburger menu
   function toggleMenu() {
     const nav = document.querySelector("nav ul");
     const icon = document.querySelector(".hamburger i");
-    
     nav.classList.toggle("show");
     icon.classList.toggle("fa-bars");
     icon.classList.toggle("fa-times");
   }
 
-  // Handle dropdowns (e.g., clicking "Classes" opens submenu)
-  document.addEventListener("DOMContentLoaded", () => {
-    // Target nav links that have submenus
-    document.querySelectorAll("nav li > a").forEach(link => {
-      link.addEventListener("click", function(e) {
-        const parent = this.parentElement;
-        const submenu = parent.querySelector("ul");
+  // Enable submenu toggle on mobile
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownParents = document.querySelectorAll("nav ul li > a");
 
-        // If there's a submenu, toggle it
-        if (submenu) {
-          e.preventDefault(); // Prevent link navigation
-          
-          // Close any other open dropdowns
-          document.querySelectorAll("nav li ul").forEach(ul => {
-            if (ul !== submenu) ul.classList.remove("open");
-          });
+    dropdownParents.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const parentLi = this.parentElement;
+        const submenu = parentLi.querySelector("ul");
 
-          // Toggle this one
-          submenu.classList.toggle("open");
+        // Only run on small screens
+        if (window.innerWidth <= 768 && submenu) {
+          e.preventDefault(); // Prevent link jump
+          parentLi.classList.toggle("open");
         }
       });
     });
   });
 </script>
+
 
  <script>
   function updateClock() {
